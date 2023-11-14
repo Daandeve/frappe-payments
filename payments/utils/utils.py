@@ -131,6 +131,12 @@ def make_custom_fields():
 						"options": "Currency",
 						"insert_after": "amount",
 					},
+                    {
+						"fieldname": "payment_id",
+						"fieldtype": "Data",
+						"label": "Payment Id",
+						"insert_after": "accept_payment",
+					},
 				]
 			}
 		)
@@ -151,7 +157,6 @@ def make_custom_fields():
 				}
 			]
 		}
-
 		create_custom_fields(custom_fields)
 
 
@@ -170,6 +175,7 @@ def delete_custom_fields():
 			"amount_based_on_field",
 			"amount",
 			"currency",
+			"payment_id",
 		)
 
 		for fieldname in fieldnames:
@@ -190,7 +196,6 @@ def before_install():
 	if not frappe.get_meta("Module Def").has_field("custom"):
 		return False
 
-
 @contextmanager
 def erpnext_app_import_guard():
 	marketplace_link = '<a href="https://frappecloud.com/marketplace/apps/erpnext">Marketplace</a>'
@@ -202,3 +207,4 @@ def erpnext_app_import_guard():
 		yield
 	except ImportError:
 		frappe.throw(msg, title=_("Missing ERPNext App"))
+		
