@@ -1,20 +1,22 @@
 # Payments
 
-A payments app for frappe.
+A payments app for frappe
 
 ## Installation
+
 1. Install [bench & frappe](https://frappeframework.com/docs/v14/user/en/installation).
 
 2. Once setup is complete, add the payments app to your bench by running
-    ```
-    $ bench get-app payments
-    ```
+   ```
+   $ bench get-app payments
+   ```
 3. Install the payments app on the required site by running
-    ```
-    $ bench --site <sitename> install-app payments
-    ```
+   ```
+   $ bench --site <sitename> install-app payments
+   ```
 
 ## App Structure & Details
+
 App has 2 modules - Payments and Payment Gateways.
 
 Payment Module contains the Payment Gateway DocType which creates links for the payment gateways and Payment Gateways Module contain all the Payment Gateway (Razorpay, Stripe, Braintree, Paypal, PayTM) DocTypes.
@@ -30,4 +32,5 @@ All general utils are stored in [utils](payments/utils) directory. The utils are
 #
 
 ## License
+
 MIT ([license.txt](license.txt))
